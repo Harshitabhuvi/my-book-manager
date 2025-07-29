@@ -31,9 +31,11 @@
 // export const updateBook = (id, book) => API.put(`/${id}`, book);
 // export const deleteBook = (id) => API.delete(`/${id}`);
 
-const API_URL = '/api/books';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const API_URL = `${API_BASE_URL}/books`;
 
 export const getBooks = () => fetch(API_URL).then(res => res.json());
+
 export const createBook = (book) =>
   fetch(API_URL, {
     method: 'POST',
@@ -50,3 +52,4 @@ export const updateBook = (id, book) =>
 
 export const deleteBook = (id) =>
   fetch(`${API_URL}/${id}`, { method: 'DELETE' });
+
