@@ -1,0 +1,154 @@
+/* Base layout fills entire screen */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #d2b14f; /* dark theme background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Page wrapper ensures footer stays at bottom */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main content stretches to take available height */
+.content {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Footer styling */
+footer {
+  background-color: #d9d2d2;
+  color: gold;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: auto;
+  font-weight: bold;
+  border-top: 2px solid #c0b6b6;
+}
+
+/* Navigation link styles */
+.nav-link {
+  color: gold;
+  font-weight: bold;
+  margin: 0 10px;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: gold;
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  text-shadow: 0 0 10px gold, 0 0 20px gold;
+}
+
+/* Card for book lists and other content */
+.card {
+  background-color: #cfc6c6;
+  padding: 2em;
+  border-radius: 8px;
+  color: white;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for layout alignment */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Contact page layout */
+.contact-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Contact form styling */
+.contact-form {
+  background-color: #bb6666;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional animated logo */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation for spinning logo only if motion preference allows */
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 768px) {
+  .contact-form {
+    padding: 20px;
+  }
+
+  .card {
+    padding: 1.5em;
+  }
+
+  .nav-link {
+    margin: 0 5px;
+    font-size: 14px;
+  }
+
+  footer {
+    font-size: 14px;
+  }
+}
